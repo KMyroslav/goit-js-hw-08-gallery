@@ -51,6 +51,7 @@
     href="https://cdn.pixabay.com/photo/2010/12/13/10/13/tulips-2546_1280.jpg"
   >
     <img
+      loading="lazy"
       class="gallery__image"
       src="https://cdn.pixabay.com/photo/2010/12/13/10/13/tulips-2546__340.jpg"
       data-source="https://cdn.pixabay.com/photo/2010/12/13/10/13/tulips-2546_1280.jpg"
