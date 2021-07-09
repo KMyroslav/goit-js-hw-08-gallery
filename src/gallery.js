@@ -80,23 +80,22 @@ function onKeyPress(e) {
   if (e.code === "Escape") {
     onCloseBtnClick();
   }
+  arrowControl(e);
+}
 
-  let nextImage =
-    currentImgParent.nextElementSibling?.firstElementChild.firstElementChild;
+function arrowControl(e) {
+  let nextImage = currentImgParent.nextElementSibling?.querySelector("img");
 
   if (nextImage === undefined)
     nextImage =
-      currentImgParent.parentNode.firstElementChild.firstElementChild
-        .firstElementChild;
+      currentImgParent.parentNode.firstElementChild.querySelector("img");
 
   let previousImage =
-    currentImgParent.previousElementSibling?.firstElementChild
-      .firstElementChild;
+    currentImgParent.previousElementSibling?.querySelector("img");
 
   if (previousImage === undefined)
     previousImage =
-      currentImgParent.parentNode.lastElementChild.firstElementChild
-        .firstElementChild;
+      currentImgParent.parentNode.lastElementChild.querySelector("img");
 
   if (e.code === "ArrowRight" && nextImage !== undefined) {
     modalLightboxImageEl.setAttribute(
