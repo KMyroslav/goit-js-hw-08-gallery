@@ -52,6 +52,8 @@ function openModal(e) {
     e.target.getAttribute("data-source")
   );
   modalLightboxImageEl.setAttribute("alt", e.target.getAttribute("alt"));
+  window.addEventListener("keydown", onKeyPress);
+  modalLightboxOverlay.addEventListener("click", onCloseBtnClick);
 }
 
 modalCloseBtn.addEventListener("click", onCloseBtnClick);
@@ -60,20 +62,7 @@ function onCloseBtnClick() {
   modalLightboxEl.classList.remove("is-open");
   modalLightboxImageEl.setAttribute("src", "");
   modalLightboxImageEl.setAttribute("alt", "");
-}
-
-if ((modalLightboxEl.classList.has = "is-open")) {
-  modalLightboxOverlay.addEventListener("click", onOverlayClick);
-  window.addEventListener("keydown", onKeyPress);
-} else {
-  modalLightboxOverlay.removeEventListener("click", onOverlayClick);
   window.removeEventListener("keydown", onKeyPress);
-}
-
-function onOverlayClick(e) {
-  if (e.target === e.currentTarget) {
-    modalLightboxEl.classList.remove("is-open");
-  }
 }
 
 function onKeyPress(e) {
